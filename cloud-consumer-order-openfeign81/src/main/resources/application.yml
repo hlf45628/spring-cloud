@@ -1,0 +1,27 @@
+server:
+  port: 81
+  
+spring:
+  application:
+    name: cloud-order-c-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka1111:1111/eureka,http://eureka2222:2222/eureka
+
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况iE常的情况下两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.hlf.openfeign.service.PaymentFeignService: debug
+
+feign:
+  hystrix:
+    enabled: true

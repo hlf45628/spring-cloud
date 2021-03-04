@@ -1,0 +1,13 @@
+# Project exclude paths
+/cloud-api-common/target/
+/cloud-consumer-order80/target/
+/cloud-consumer-order-openfeign81/target/
+/cloud-demo-gateway/target/
+/cloud-eureka-server-1111/src/main/resources/
+/cloud-eureka-server-1111/target/
+/cloud-eureka-server-2222/target/
+/cloud-jms-provider/target/
+/cloud-nacos-config/target/
+/cloud-provider-payment8001/target/
+/cloud-provider-payment-8002/target/
+/out/

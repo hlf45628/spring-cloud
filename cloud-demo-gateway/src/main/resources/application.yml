@@ -1,0 +1,21 @@
+server:
+  port: 88
+
+spring:
+  application:
+    name: cloud-demo-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: order
+          uri: lb:CLOUD-ORDER-C-SERVICE	   # lb:使用LoadBalancerClient 实现负载均衡，后面goods是微服务的名称【主要应用于集群环境】
+          predicates:
+            - Path=/consumer/**,/hello/**  #请求路径过滤
+          filters:
+            - AddRequestParameter=name,javaboy  # 在请求转发路由的时候，自动额外添加参数
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka
+    instance:
+      prefer-ip-address: true

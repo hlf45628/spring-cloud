@@ -1,0 +1,14 @@
+server:
+  port: 2222
+
+eureka:
+  instance:
+    hostname: eureka2222
+  client:
+    register-with-eureka: false #标识是否将本实例在Eureka Server中进行注册 , 默认为true
+    fetch-registry: false #标识是否从Eureka Server中取得本实例的注册信息,默认为true
+    service-url:
+      defaultZone: http://eureka1111:1111/eureka/ #表示从默认分区中访问Eureka Server
+    server:
+      enable-self-perservation: false #eureka禁用自我保护，定时移除不可用服务
+      eviction-interval-time-in-ms: 2000 #2s
